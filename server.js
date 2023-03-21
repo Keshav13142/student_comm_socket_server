@@ -12,7 +12,7 @@ io.on("connect", (socket) => {
     console.log(`connected ${socket.id}`);
     socket.onAny((eventName, ...args) => {
         // args is an array of objects we'll only be needing the 1st element
-        socket.emit(eventName, args[0]);
+        io.emit(eventName, args[0]);
     });
 });
 
